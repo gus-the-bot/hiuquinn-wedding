@@ -16,19 +16,18 @@ export default function App() {
   return (
     <div className="app-shell">
       <main className="phone-frame" aria-label={siteConfig.title}>
-        <AudioToggle src={siteConfig.audio.src} title={siteConfig.audio.title} />
         <Cover />
         <Calendar />
         <Person
           label="Cô dâu"
-          name={couple.bride.fullName}
+          name={couple.bride.name}
           birthday={couple.bride.birthday}
           photo={couple.bride.photo}
           align="left"
         />
         <Person
           label="Chú rể"
-          name={couple.groom.fullName}
+          name={couple.groom.name}
           birthday={couple.groom.birthday}
           photo={couple.groom.photo}
           align="right"
@@ -42,6 +41,7 @@ export default function App() {
         <Countdown />
         <footer className="footer">{footer.signature}</footer>
       </main>
+      <AudioToggle src={siteConfig.audio.src} title={siteConfig.audio.title} />
       <div className="made-with">Made with love</div>
     </div>
   );
