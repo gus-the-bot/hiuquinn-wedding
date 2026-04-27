@@ -543,7 +543,7 @@
 .countdown {
   position: relative;
   padding: 46px 24px 48px;
-  background: #1b1b1b url("/assets/photos/p2.jpg") center/cover no-repeat;
+  background: #1b1b1b url("/assets/photos/p2.jpg") center 25%/cover no-repeat;
   color: #fff;
   text-align: center;
 }
