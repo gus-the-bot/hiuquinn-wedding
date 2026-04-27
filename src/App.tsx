@@ -3,7 +3,6 @@ import Cover from "./components/sections/Cover";
 import Calendar from "./components/sections/Calendar";
 import Person from "./components/sections/Person";
 import LoveStory from "./components/sections/LoveStory";
-import Families from "./components/sections/Families";
 import InviteHero from "./components/sections/InviteHero";
 import InviteDetails from "./components/sections/InviteDetails";
 import Timeline from "./components/sections/Timeline";
@@ -35,7 +34,6 @@ export default function App() {
           align="right"
         />
         <LoveStory />
-        <Families />
         <InviteHero />
         <InviteDetails />
         <Timeline />

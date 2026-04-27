@@ -14,6 +14,9 @@ export default function InviteDetails() {
       </div>
       {lunarNote && <div className="lunar">{lunarNote}</div>}
       <div className="venue">{invitation.venueName}</div>
+      {invitation.venueHall && (
+        <div className="venue-hall">{invitation.venueHall}</div>
+      )}
       <div className="address">Địa chỉ: {invitation.venueAddress}</div>
       <div
         className="hero-photo"
