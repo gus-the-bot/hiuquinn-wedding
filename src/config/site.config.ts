@@ -3,8 +3,7 @@
 // All visual text / dates / photos / RSVP endpoint live here.
 // ==============================================================
 
-export type TimelineItem = { time: string; label: string; icon?: string };
-export type FamilySide = { title: string; lines: string[] };
+export type TimelineItem = { time: string; label: string };
 
 export type SiteConfig = {
   title: string;
@@ -14,23 +13,23 @@ export type SiteConfig = {
 
   /** Couple / hero section. */
   couple: {
-    bride: { name: string; fullName: string; birthday: string; photo: string };
-    groom: { name: string; fullName: string; birthday: string; photo: string };
+    bride: { name: string; fullName: string; birthday?: string; photo: string };
+    groom: { name: string; fullName: string; birthday?: string; photo: string };
     /** "Save The Date" cover image (portrait). */
     coverPhoto: string;
     /** Big hero photo used behind the invitation details. */
     heroPhoto: string;
   };
 
-  /** The wedding day itself. ISO string: "2026-01-06T11:45:00+07:00" */
+  /** The wedding day itself. ISO string, e.g. "2026-05-24T11:00:00+07:00" */
   weddingDate: string;
-  /** Vietnamese label shown in the calendar (e.g. "Tháng 01"). */
+  /** Vietnamese label shown in the calendar (e.g. "Tháng 05"). */
   monthLabel: string;
   /** Year label shown next to the big day number (e.g. "Năm 2026"). */
   yearLabel: string;
   /** Optional lunar / alternate calendar annotation. */
   lunarNote: string;
-  /** Weekday Vietnamese label (e.g. "Thứ Ba"). */
+  /** Weekday Vietnamese label (e.g. "Chủ Nhật"). */
   weekdayLabel: string;
 
   loveStory: {
@@ -39,16 +38,13 @@ export type SiteConfig = {
     closing: string[];
   };
 
-  families: {
-    left: FamilySide;
-    right: FamilySide;
-  };
-
   invitation: {
-    /** Line above the big day number, e.g. "Thân mời bạn đến dự lễ thành hôn được tổ chức vào 11:45, Thứ Ba" */
+    /** Line above the big day number */
     intro: string;
     /** Venue name */
     venueName: string;
+    /** Sub-venue / hall */
+    venueHall?: string;
     /** Full venue address */
     venueAddress: string;
   };
@@ -85,32 +81,30 @@ export type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  title: "Our Wedding Day",
+  title: "Trung Hiếu & Thảo Quyên — Wedding Invitation",
   lang: "vi",
-  accent: "#e94b6a",
+  accent: "#b81d1d",
 
   couple: {
     bride: {
-      name: "Thanh Hằng",
-      fullName: "THANH HẰNG",
-      birthday: "20.08.2001",
-      photo: "/assets/photos/p5.png",
+      name: "Thảo Quyên",
+      fullName: "VÕ HUỲNH THẢO QUYÊN",
+      photo: "/assets/photos/p3.jpg",
     },
     groom: {
-      name: "Minh Trí",
-      fullName: "MINH TRÍ",
-      birthday: "06.05.1998",
+      name: "Trung Hiếu",
+      fullName: "HUỲNH TRUNG HIẾU",
       photo: "/assets/photos/p4.jpg",
     },
     coverPhoto: "/assets/photos/cover.jpg",
     heroPhoto: "/assets/photos/p2.jpg",
   },
 
-  weddingDate: "2026-01-06T11:45:00+07:00",
-  monthLabel: "Tháng 01",
+  weddingDate: "2026-05-24T11:00:00+07:00",
+  monthLabel: "Tháng 05",
   yearLabel: "Năm 2026",
-  lunarNote: "(Tức ngày 20 tháng 12 năm 2025)",
-  weekdayLabel: "Thứ Ba",
+  lunarNote: "Nhằm ngày 08 tháng 04 năm Bính Ngọ",
+  weekdayLabel: "Chủ Nhật",
 
   loveStory: {
     title: "OUR LOVE STORY",
@@ -122,36 +116,18 @@ export const siteConfig: SiteConfig = {
     ],
   },
 
-  families: {
-    left: {
-      title: "Nhà Trai",
-      lines: [
-        "Ông. Phạm Minh Hải",
-        "Bà. Nguyễn Mai Thu",
-        "TP. Hà Nội",
-      ],
-    },
-    right: {
-      title: "Nhà Gái",
-      lines: [
-        "Ông. Trần Anh Tài",
-        "Bà. Nguyễn Thanh Mai",
-        "TP. Quảng Ninh",
-      ],
-    },
-  },
-
   invitation: {
     intro:
-      "Thân mời bạn đến dự lễ thành hôn được tổ chức vào 11:45, Thứ Ba",
-    venueName: "Luxury Quảng Ninh",
-    venueAddress: "Phường Bãi Cháy, tỉnh Quảng Ninh",
+      "Trân trọng kính mời đến dự buổi tiệc chung vui cùng gia đình chúng tôi, Chủ Nhật",
+    venueName: "MINH TOÀN GALAXY",
+    venueHall: "SẢNH EROS — TẦNG 3",
+    venueAddress: "306 Đường 2/9, P. Hòa Cường, Tp. Đà Nẵng",
   },
 
   timeline: [
-    { time: "10:30", label: "Đón tiếp khách" },
-    { time: "10:45", label: "Lễ thành hôn" },
-    { time: "11:00", label: "Khai tiệc" },
+    { time: "11:00", label: "Đón khách" },
+    { time: "12:00", label: "Lễ thành hôn" },
+    { time: "12:15", label: "Khai tiệc" },
   ],
 
   rsvp: {
@@ -167,7 +143,7 @@ export const siteConfig: SiteConfig = {
   loveBox: {
     heading: "Hộp Yêu Thương",
     body:
-      "Cảm ơn bạn đã dành tình cảm cho chúng mình! Sự hiện diện của bạn chính là món quà ý nghĩa nhất, và chúng mình vô cùng trân quý khi được cùng bạn chia sẻ niềm hạnh phúc trong ngày trọng đại này.",
+      "Sự hiện diện của quý vị là niềm vinh hạnh cho gia đình chúng tôi. Rất hân hạnh được đón tiếp!",
     placeholder: "Gửi lời chúc...",
     sendButton: "Bắn tim",
   },

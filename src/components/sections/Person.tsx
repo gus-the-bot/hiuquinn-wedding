@@ -1,7 +1,7 @@
 type Props = {
   label: string;
   name: string;
-  birthday: string;
+  birthday?: string;
   photo: string;
   align: "left" | "right";
 };
@@ -17,7 +17,7 @@ export default function Person({ label, name, birthday, photo, align }: Props) {
       <div className="text-block">
         <div className="label">{label}</div>
         <div className="name">{name}</div>
-        <div className="birthday">{birthday}</div>
+        {birthday && <div className="birthday">{birthday}</div>}
       </div>
     </section>
   );

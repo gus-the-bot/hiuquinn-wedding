@@ -42,7 +42,7 @@ export default function Countdown() {
           <span className="unit">giây</span>
         </div>
       </div>
-      <p>{siteConfig.loveBox.body}</p>
+      <p>{siteConfig.invitation.intro}</p>
     </section>
   );
 }

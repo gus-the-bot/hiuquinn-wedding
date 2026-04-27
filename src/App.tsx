@@ -3,7 +3,6 @@ import Cover from "./components/sections/Cover";
 import Calendar from "./components/sections/Calendar";
 import Person from "./components/sections/Person";
 import LoveStory from "./components/sections/LoveStory";
-import Families from "./components/sections/Families";
 import InviteHero from "./components/sections/InviteHero";
 import InviteDetails from "./components/sections/InviteDetails";
 import Timeline from "./components/sections/Timeline";
@@ -17,25 +16,25 @@ export default function App() {
   return (
     <div className="app-shell">
       <main className="phone-frame" aria-label={siteConfig.title}>
-        <AudioToggle src={siteConfig.audio.src} title={siteConfig.audio.title} />
         <Cover />
         <Calendar />
-        <Person
-          label="Cô dâu"
-          name={couple.bride.fullName}
-          birthday={couple.bride.birthday}
-          photo={couple.bride.photo}
-          align="left"
-        />
-        <Person
-          label="Chú rể"
-          name={couple.groom.fullName}
-          birthday={couple.groom.birthday}
-          photo={couple.groom.photo}
-          align="right"
-        />
+        <div className="persons-row">
+          <Person
+            label="Cô dâu"
+            name={couple.bride.name}
+            birthday={couple.bride.birthday}
+            photo={couple.bride.photo}
+            align="left"
+          />
+          <Person
+            label="Chú rể"
+            name={couple.groom.name}
+            birthday={couple.groom.birthday}
+            photo={couple.groom.photo}
+            align="right"
+          />
+        </div>
         <LoveStory />
-        <Families />
         <InviteHero />
         <InviteDetails />
         <Timeline />
@@ -44,6 +43,7 @@ export default function App() {
         <Countdown />
         <footer className="footer">{footer.signature}</footer>
       </main>
+      <AudioToggle src={siteConfig.audio.src} title={siteConfig.audio.title} />
       <div className="made-with">Made with love</div>
     </div>
   );
