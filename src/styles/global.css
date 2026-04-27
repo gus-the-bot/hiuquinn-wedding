@@ -1,0 +1,39 @@
+/* Google Font stand-ins for the Cinelove custom fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Open+Sans:wght@300;400;500;600;700&family=Marcellus&family=Great+Vibes&family=Parisienne&family=Dancing+Script:wght@400;500;600;700&family=Italianno&family=Petit+Formal+Script&display=swap");
+
+:root {
+  --accent: #e94b6a;
+  --ink: #161515;
+  --muted: #7a7a7a;
+  --paper: #fdfaf4;
+  --card-w: 500px;
+  --card-h: 864px;
+
+  --font-body: "Open Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+
+  /* Display / hero / script stand-ins */
+  --font-aquarelle: "Parisienne", "Great Vibes", cursive; /* Aquarelle */
+  --font-katty: "Great Vibes", "Dancing Script", cursive; /* Katty Diona */
+  --font-madam: "Italianno", "Parisienne", cursive;        /* Madam Ghea */
+  --font-carlytte: "Italianno", "Parisienne", cursive;     /* Carlytte */
+  --font-signora: "Great Vibes", cursive;                  /* Signora */
+  --font-belinda: "Cormorant Garamond", serif;             /* Belinda Avenue */
+  --font-mallong: "Marcellus", serif;                      /* Mallong */
+  --font-hamstter: "Dancing Script", cursive;              /* The Hamstter */
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: linear-gradient(180deg, #f3eee8 0%, #efe8df 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+button { font: inherit; }
+a { color: inherit; }
