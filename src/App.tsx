@@ -18,20 +18,22 @@ export default function App() {
       <main className="phone-frame" aria-label={siteConfig.title}>
         <Cover />
         <Calendar />
-        <Person
-          label="Cô dâu"
-          name={couple.bride.name}
-          birthday={couple.bride.birthday}
-          photo={couple.bride.photo}
-          align="left"
-        />
-        <Person
-          label="Chú rể"
-          name={couple.groom.name}
-          birthday={couple.groom.birthday}
-          photo={couple.groom.photo}
-          align="right"
-        />
+        <div className="persons-row">
+          <Person
+            label="Cô dâu"
+            name={couple.bride.name}
+            birthday={couple.bride.birthday}
+            photo={couple.bride.photo}
+            align="left"
+          />
+          <Person
+            label="Chú rể"
+            name={couple.groom.name}
+            birthday={couple.groom.birthday}
+            photo={couple.groom.photo}
+            align="right"
+          />
+        </div>
         <LoveStory />
         <InviteHero />
         <InviteDetails />
