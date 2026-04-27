@@ -125,8 +125,9 @@ export const siteConfig: SiteConfig = {
   },
 
   timeline: [
-    { time: "09:00", label: "Lễ thành hôn tại Tư Gia Nam" },
-    { time: "11:00", label: "Khai tiệc tại Minh Toàn Galaxy" },
+    { time: "11:00", label: "Đón khách" },
+    { time: "12:00", label: "Lễ thành hôn" },
+    { time: "12:15", label: "Khai tiệc" },
   ],
 
   rsvp: {
